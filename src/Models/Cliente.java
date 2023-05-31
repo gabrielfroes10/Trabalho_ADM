@@ -31,7 +31,7 @@ public class Cliente {
         this.endereco=endereco;
     }
     public void getEndereco(){
-        endereco.toString();
+        this.endereco.toString();
     }
     public void setCPF(int cpf){
         this.CPF=cpf;
