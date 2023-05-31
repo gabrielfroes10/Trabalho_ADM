@@ -3,13 +3,13 @@ package Models;
 public class Cliente {
     private String nome;
     private String contato;
-    private int CPF;
+    private int cpf;
     private Endereco endereco;
 
-    public Cliente(String nome, String contato, int CPF) {
+    public Cliente(String nome, String contato, int cpf) {
         setNome(nome);
         setContato(contato);
-        setCPF(CPF);
+        setCpf(cpf);
     }
 
     public String getNome() {
@@ -27,16 +27,25 @@ public class Cliente {
     public void setContato(String contato) {
         this.contato = contato;
     }
-    public void setEndereco(Endereco endereco){
-        this.endereco=endereco;
+
+    public void setEndereco(Endereco endereco) {
+        this.endereco = endereco;
     }
-    public void getEndereco(){
-        this.endereco.toString();
+
+    public Endereco getEndereco() {
+        return endereco;
     }
-    public void setCPF(int cpf){
-        this.CPF=cpf;
+
+    @Override
+    public String toString() {
+        return "Nome: " + nome + "\nContato: " + contato + "\nCPF: " + cpf + "\nEndereço:\n" + endereco.toString();
     }
-    public int getCPF(){
-        return this.CPF;
+
+    public void setCpf(int cpf) {
+        this.cpf = cpf;
+    }
+
+    public int getCpf() {
+        return cpf;
     }
 }

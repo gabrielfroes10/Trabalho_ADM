@@ -7,9 +7,10 @@ public class Modulo {
     private String nome;
     private String tipo;
     private int id;
-    Random generator = new Random();
-    HashMap<Integer, String> idmap = new HashMap<>();
-    public Modulo(String nome, String tipo){
+    private Random generator = new Random();
+    private HashMap<Integer, String> idMap = new HashMap<>();
+
+    public Modulo(String nome, String tipo) {
         setTipo(tipo);
         setNome(nome);
         setId();
@@ -36,24 +37,23 @@ public class Modulo {
     }
 
     public void setId() {
-        this.id = generateID();
+        this.id = generateId();
     }
 
-    public int generateID(){
-       int id= generator.nextInt(1000);
-      while(idmap.containsKey(id)){
-          id=generator.nextInt(1000);
-      }
-      idmap.put(id,getNome());
-      return id;
+    public int generateId() {
+        int id = generator.nextInt(1000);
+        while (idMap.containsKey(id)) {
+            id = generator.nextInt(1000);
+        }
+        idMap.put(id, getNome());
+        return id;
     }
 
     @Override
     public String toString() {
-        return "Modulo" +
-                "Nome='" + nome + '\'' +
-                ", Tipo='" + tipo + '\'' +
-                ", Id =" + id
-                ;
+        return "Módulo\n" +
+                "Nome: " + nome +
+                "\nTipo: " + tipo +
+                "\nID: " + id;
     }
 }

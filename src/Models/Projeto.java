@@ -10,27 +10,25 @@ public class Projeto {
     private String descricao;
     private Cliente cliente;
     private Orcamento orcamento;
-    private List<Modulo> modulos=new ArrayList<>();
+    private List<Modulo> modulos = new ArrayList<>();
 
-    Random generator = new Random();
-    HashMap<Integer, String> idmap = new HashMap<>();
+    private Random generator = new Random();
+    private HashMap<Integer, String> idMap = new HashMap<>();
 
     @Override
     public String toString() {
-        return "Projeto" +
-                "id=" + id +
-                ", descricao='" + descricao + '\'' +
-                ", cliente=" + cliente +
-                ", orcamento=" + orcamento +
-                ", modulos=" + modulos
-                ;
+        return "Projeto\n" +
+                "id: " + id +
+                "\ndescricao: '" + descricao + '\'' +
+                "\ncliente: " + cliente.toString() +
+                "\norcamento: " + orcamento.toString() +
+                "\nmodulos: " + modulos.toString();
     }
 
     public Projeto(String descricao, Cliente cliente, Orcamento orcamento, Modulo modulo) {
-
         this.descricao = descricao;
-        this.cliente=cliente;
-        this.orcamento=orcamento;
+        this.cliente = cliente;
+        this.orcamento = orcamento;
         modulos.add(modulo);
     }
 
@@ -43,7 +41,7 @@ public class Projeto {
     }
 
     public int getId() {
-        return this.id;
+        return id;
     }
 
     public void setId(int id) {
@@ -51,15 +49,16 @@ public class Projeto {
     }
 
     public String getDescricao() {
-        return this.descricao;
+        return descricao;
     }
 
     public void setDescricao(String descricao) {
         this.descricao = descricao;
     }
-    public int generateId(){
-        int id= generator.nextInt(1000);
-        while(idmap.containsKey(id)) {
+
+    private int generateId() {
+        int id = generator.nextInt(1000);
+        while (idMap.containsKey(id)) {
             id = generator.nextInt(1000);
         }
         return id;

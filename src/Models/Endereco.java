@@ -1,60 +1,62 @@
 package Models;
 
 public class Endereco {
-    private String Rua;
-    private String Bairro;
-    private String Cidade;
-    private String Cep;
-    private int Numero;
+    private String rua;
+    private String bairro;
+    private String cidade;
+    private String cep;
+    private int numero;
 
-    public Endereco(String rua, String Bairro, String cidade, String CEP, int numero){
-        setBairro(Bairro);
-        setCep(CEP);
+    public Endereco(String rua, String bairro, String cidade, String cep, int numero){
         setRua(rua);
+        setBairro(bairro);
         setCidade(cidade);
+        setCep(cep);
         setNumero(numero);
     }
+
     @Override
     public String toString() {
-        return "Rua: "+GetRua()+"\n Bairro: "+getBairro()+"\n Numero: "+getNumero()+"\nCidade: "+getCidade()+"\n CEP: "+getCep();
+        return "Rua: " + getRua() + "\nBairro: " + getBairro() + "\nNúmero: " + getNumero() + "\nCidade: " + getCidade() + "\nCEP: " + getCep();
     }
-    public String GetRua(){
-        return this.Rua;
+
+    public String getRua(){
+        return this.rua;
     }
 
     public String getBairro() {
-        return Bairro;
+        return bairro;
     }
 
     public String getCidade() {
-        return Cidade;
+        return cidade;
     }
 
     public String getCep() {
-        return Cep;
+        return cep;
     }
 
     public int getNumero() {
-        return Numero;
+        return numero;
     }
 
     public void setRua(String rua) {
-        Rua = rua;
+        this.rua = rua;
     }
 
     public void setBairro(String bairro) {
-        Bairro = bairro;
+        this.bairro = bairro;
     }
 
     public void setCidade(String cidade) {
-        Cidade = cidade;
+        this.cidade = cidade;
     }
 
     public void setCep(String cep) {
-        Cep = cep;
+        this.cep = cep;
     }
 
     public void setNumero(int numero) {
-        Numero = numero;
+        this.numero = numero;
     }
 }
