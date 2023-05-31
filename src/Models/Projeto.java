@@ -30,6 +30,7 @@ public class Projeto {
         this.cliente = cliente;
         this.orcamento = orcamento;
         modulos.add(modulo);
+        setId();
     }
 
     public List<Modulo> getModulos() {
@@ -44,7 +45,7 @@ public class Projeto {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId() {
         this.id = generateId();
     }
 
